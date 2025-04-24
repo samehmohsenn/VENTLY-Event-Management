@@ -1,0 +1,71 @@
+<div class="container">
+  <header class="header">
+    <div class="logo">| VENTLY |</div>
+    <nav class="nav">
+      <a routerLink="/">Home</a>
+      <a routerLink="/registered-events">Registered Events</a>
+      <a routerLink="/browse">Browse</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="content-wrapper">
+      <div class="signup-container">
+        <h1 class="title">Sign up</h1>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form">
+          <div class="input-group">
+            <input
+              type="text"
+              formControlName="username"
+              placeholder="Username"
+              class="input"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              formControlName="fullName"
+              placeholder="Full Name"
+              class="input"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="email"
+              formControlName="email"
+              placeholder="Email"
+              class="input"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              formControlName="password"
+              placeholder="Password"
+              class="input"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              formControlName="confirmPassword"
+              placeholder="Confirm Password"
+              class="input"
+              required
+            />
+          </div>
+          <button type="submit" class="create-button" [disabled]="!signupForm.valid">
+            Create Account
+          </button>
+        </form>
+      </div>
+      <p class="login-text">
+        Have an account? <a routerLink="/login" class="login-link">Login</a>.
+      </p>
+    </div>
+  </main>
+</div> 
